@@ -1,19 +1,7 @@
-// input
-// var username = prompt("give me your username");
-
-// processing
-// var welcomeMessage = "this script works!!" + username
-
-// output
-// alert("this script works" + userName)
-
-// console.log("hello")
-
 var btnTranslate = document.querySelector("#btn-translate");
 var txtInput = document.querySelector("#txt-input");
 var outputDiv = document.querySelector("#output");
 
-// var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json"
 
 var serverURL = "https://api.funtranslations.com/translate/minion.json"
 
@@ -29,14 +17,14 @@ function errorHandler(error) {
 
 
 function clickHandler() {
-    var inputText = txtInput.value; // taking input
+    var inputText = txtInput.value; 
 
-    // calling server for processing
+    
     fetch(getTranslationURL(inputText))
         .then(response => response.json())
         .then(json => {
             var translatedText = json.contents.translated;
-            outputDiv.innerText = translatedText; // output
+            outputDiv.innerText = translatedText; 
            })
         .catch(errorHandler)
 };
